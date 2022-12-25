@@ -17,6 +17,9 @@ router.get('/land', homeController.landHome);
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }), homeController.allowGoogleUser);
+router.get('/showerror', (req, res)=>{
+  res.render('showerror');
+})
 
 router.get('/land/logout', homeController.logout);
 
